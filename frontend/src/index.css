@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-width: 260px;
+  --navbar-height: 64px;
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --bg-sidebar: #0f172a;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --border-color: #334155;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-card); }
+::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* Glass card */
+.glass-card {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 16px;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+              linear-gradient(135deg, #6366f1, #8b5cf6) border-box;
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+}
+
+/* Status badges */
+.badge-pending   { @apply bg-yellow-500/20 text-yellow-400 px-2 py-0.5 rounded-full text-xs font-semibold; }
+.badge-progress  { @apply bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full text-xs font-semibold; }
+.badge-resolved  { @apply bg-green-500/20 text-green-400 px-2 py-0.5 rounded-full text-xs font-semibold; }
+.badge-low       { @apply bg-slate-500/20 text-slate-400 px-2 py-0.5 rounded-full text-xs font-semibold; }
+.badge-medium    { @apply bg-orange-500/20 text-orange-400 px-2 py-0.5 rounded-full text-xs font-semibold; }
+.badge-high      { @apply bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full text-xs font-semibold; }
+.badge-admin     { @apply bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded-full text-xs font-semibold; }
+.badge-manager   { @apply bg-indigo-500/20 text-indigo-400 px-2 py-0.5 rounded-full text-xs font-semibold; }
+.badge-employee  { @apply bg-cyan-500/20 text-cyan-400 px-2 py-0.5 rounded-full text-xs font-semibold; }
+
+/* MUI Overrides for dark theme */
+.MuiPaper-root { background-color: var(--bg-card) !important; color: var(--text-primary) !important; }
+.MuiTableCell-root { color: var(--text-primary) !important; border-color: var(--border-color) !important; }
+.MuiTableRow-root:hover { background-color: rgba(99,102,241,0.05) !important; }
+.MuiInputBase-root { color: var(--text-primary) !important; }
+.MuiInputLabel-root { color: var(--text-secondary) !important; }
+.MuiOutlinedInput-notchedOutline { border-color: var(--border-color) !important; }
+.MuiSelect-icon { color: var(--text-secondary) !important; }
+.MuiMenuItem-root:hover { background-color: rgba(99,102,241,0.1) !important; }
+.MuiDialog-paper { background-color: #1e293b !important; }
+.MuiChip-root { color: var(--text-primary) !important; }
+
+/* Page transitions */
+.page-enter {
+  animation: fadeSlideIn 0.3s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover lift effect */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+}
+
+/* Pulse dot */
+.pulse-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
