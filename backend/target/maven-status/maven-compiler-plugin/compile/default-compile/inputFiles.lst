@@ -11,6 +11,7 @@ C:\Users\bosev\Documents\antigravity-mini-project\backend\src\main\java\com\smar
 C:\Users\bosev\Documents\antigravity-mini-project\backend\src\main\java\com\smarttracker\dto\request\LoginRequest.java
 C:\Users\bosev\Documents\antigravity-mini-project\backend\src\main\java\com\smarttracker\dto\response\ActivityLogResponse.java
 C:\Users\bosev\Documents\antigravity-mini-project\backend\src\main\java\com\smarttracker\dto\response\TaskResponse.java
+C:\Users\bosev\Documents\antigravity-mini-project\backend\src\main\java\com\smarttracker\config\CorsConfig.java
 C:\Users\bosev\Documents\antigravity-mini-project\backend\src\main\java\com\smarttracker\controller\AuthController.java
 C:\Users\bosev\Documents\antigravity-mini-project\backend\src\main\java\com\smarttracker\config\DataSeeder.java
 C:\Users\bosev\Documents\antigravity-mini-project\backend\src\main\java\com\smarttracker\dto\request\CreateTaskRequest.java
